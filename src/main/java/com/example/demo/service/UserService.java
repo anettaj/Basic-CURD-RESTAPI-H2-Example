@@ -16,7 +16,13 @@ public class UserService {
 	UserRepo repo;
 	
 	public User save(User user) {
-		return repo.save(user);
+		User myUser=repo.save(user);
+		if(myUser.getName().equals("salbin")) {
+			System.out.println("sir is :)");
+		}
+		
+		
+		return myUser;
 	}
 
 	public List<User> getAllUser() {
