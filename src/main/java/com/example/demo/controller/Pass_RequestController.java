@@ -12,27 +12,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.Request;
-import com.example.demo.service.RequestService;
+import com.example.demo.entity.Pass_Request;
+import com.example.demo.service.Pass_RequestService;
 
 @RestController
 @RequestMapping("request")
 
 
-public class RequestController {
+public class Pass_RequestController {
 	
 	@Autowired
-	RequestService service;
+	Pass_RequestService service;
 	
 	@GetMapping
-	public List<Request> getRequest() {
+	public List<Pass_Request> getRequest() {
 	
 		return service.getAllRequest();
 	//	return new Request(2, "APPROVED", 22, 23, 35, 33);
 	}
 	
 	@PostMapping
-	public Request addRequest(@RequestBody Request request) {
+	public Pass_Request addRequest(@RequestBody Pass_Request request) {
 
 		return service.save(request);
 
