@@ -2,15 +2,7 @@ package com.example.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Vehicle {
@@ -18,23 +10,8 @@ public class Vehicle {
 	//defining id as column name  
 	@Column  
 	private int id;  
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    private User post;
-	
-	
-	
-	
-	
 	
 	//defining name as column name  
-	
-	
-	
-	
-	
 	
 	
 	@Column  
