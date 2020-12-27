@@ -9,11 +9,6 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Vehicle {
 	@Id  
-	//defining id as column name  
-	
-	//defining name as column name  
-	
-	
 	@Column  
 	private String type;  
 	//defining Type as column name  
