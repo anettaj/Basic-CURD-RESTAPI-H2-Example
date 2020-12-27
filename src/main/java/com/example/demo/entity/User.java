@@ -3,33 +3,20 @@ package com.example.demo.entity;
 import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import com.sun.istack.NotNull;
 
 @Entity
-@Table(name = "USER")//initialising as foreign key
 public class User {
 
 	@Id  
-	@GeneratedValue(strategy = GenerationType.IDENTITY)//auto generating
 	@NotNull
 	@Column(unique = true)
 	
 	private int id;
 	
-	//defining id as column name
-	
-	
-	
-	
-	
-	
-	
-	
+	//defining id as column ID
+
 	//defining name as column name  
 	@Column  
 	private String name;  
@@ -39,42 +26,29 @@ public class User {
 	//defining gender as column name  
 	@Column  
 	private String user;  
-	//defining gender as column name
+	//defining user as column name
 	@Column  
 	private int adharNo;  
-	//defining gender as column name
+	//defining adharno as column name
 	@Column
 	//@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dob;  
-	//defining gender as column name
+	//defining dob as column name
 	@Column  
 	private String address;  
-	//defining gender as column name
+	//defining address as column name
 	@Column
 	private int lnNo;  
-	//defining gender as column name
+	//defining lnno as column name
 	@Column
 	private int mobileNo;  
-	//defining gender as column name
+	//defining mobileNo as column name
 	@Column
 	private int noOfPass;  
-	//defining gender as column name
+	//defining noOfPass as column name
 	@Column
 	private int noOfVehicle;  
-	//defining gender as column name
-	
-	
-	
-	//who all are taking id as a foreign key is initialised in parent class
-	@OneToMany(mappedBy = "user")
-	private Request request;
-	
-	@OneToMany(mappedBy = "user")
-	private CurrentInfo currentinfo;
-	
-	@OneToMany(mappedBy = "user")
-	private Vehicle vehicle;
-	
+	//defining noOfVehicle as column name
 	
 	
 	
