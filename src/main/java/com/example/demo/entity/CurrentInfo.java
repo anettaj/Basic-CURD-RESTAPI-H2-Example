@@ -4,15 +4,16 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 
 public class CurrentInfo {
 
 	@Id  
-	//defining id as column name  
-	@Column  
-	private int id;  
+	//defining id as column name   
+	 
 	@Column  
 	private int durationTo;  
 	//defining name as column name
@@ -24,13 +25,10 @@ public class CurrentInfo {
 	private Date expiryDate;  
 	//defining name as column name
 	
+	@ManyToOne()
+	@JoinColumn(name="user_id")
+	private CurrentInfo user_id;
 	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
 	public int getDurationTo() {
 		return durationTo;
 	}
@@ -51,12 +49,11 @@ public class CurrentInfo {
 	}
 	@Override
 	public String toString() {
-		return "CurrentInfo [id=" + id + ", durationTo=" + durationTo + ", durationFrom=" + durationFrom
+		return "CurrentInfo [durationTo=" + durationTo + ", durationFrom=" + durationFrom
 				+ ", expiryDate=" + expiryDate + "]";
 	}
-	public CurrentInfo(int id, int durationTo, int durationFrom, Date expiryDate) {
+	public CurrentInfo(int durationTo, int durationFrom, Date expiryDate) {
 		super();
-		this.id = id;
 		this.durationTo = durationTo;
 		this.durationFrom = durationFrom;
 		this.expiryDate = expiryDate;
