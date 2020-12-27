@@ -15,7 +15,7 @@ public class CurrentInfo {
 	//defining id as column name   
 	 
 	@Column  
-	private int durationTo;  
+	private int duration;  
 	//defining name as column name
 	@Column  
 	private int durationFrom;  
@@ -28,12 +28,14 @@ public class CurrentInfo {
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user_id;
-	
-	public int getDurationTo() {
-		return durationTo;
+	@ManyToOne
+	@JoinColumn(name="Duration_To")
+	private Request Duration_To;
+	public int getDuration() {
+		return duration;
 	}
-	public void setDurationTo(int durationTo) {
-		this.durationTo = durationTo;
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
 	public int getDurationFrom() {
 		return durationFrom;
@@ -49,12 +51,12 @@ public class CurrentInfo {
 	}
 	@Override
 	public String toString() {
-		return "CurrentInfo [durationTo=" + durationTo + ", durationFrom=" + durationFrom
+		return "CurrentInfo [duration=" + duration + ", durationFrom=" + durationFrom
 				+ ", expiryDate=" + expiryDate + "]";
 	}
-	public CurrentInfo(int durationTo, int durationFrom, Date expiryDate) {
+	public CurrentInfo(int duration, int durationFrom, Date expiryDate) {
 		super();
-		this.durationTo = durationTo;
+		this.duration = duration;
 		this.durationFrom = durationFrom;
 		this.expiryDate = expiryDate;
 	}
