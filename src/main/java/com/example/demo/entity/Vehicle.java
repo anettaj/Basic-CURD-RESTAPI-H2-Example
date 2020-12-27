@@ -1,8 +1,10 @@
 package com.example.demo.entity;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Vehicle {
@@ -27,7 +29,8 @@ public class Vehicle {
 	private int registerationNo; 
 	//defining Registeration_no as column name
 	
-	
+	@OneToMany
+	private List<User> users;
 	public int getId() {
 		return id;
 	}
