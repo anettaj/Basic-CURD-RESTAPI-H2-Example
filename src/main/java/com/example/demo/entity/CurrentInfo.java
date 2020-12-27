@@ -25,9 +25,9 @@ public class CurrentInfo {
 	private Date expiryDate;  
 	//defining name as column name
 	
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name="user_id")
-	private CurrentInfo user_id;
+	private User user_id;
 	
 	public int getDurationTo() {
 		return durationTo;
