@@ -32,23 +32,9 @@ public class CurrentInfo {
 	private Request Duration_From;
 	
 	@OneToOne
-	@JoinColumn(name="Date_To")
+	@JoinColumn(name="Expiry_Date")
 	private Request Date_To;
 	
-	public Date getExpiryDate() {
-		return expiryDate;
-	}
-	public void setExpiryDate(Date expiryDate) {
-		this.expiryDate = expiryDate;
-	}
-	@Override
-	public String toString() {
-		return "CurrentInfo [ expiryDate=" + expiryDate + "]";
-	}
-	public CurrentInfo(Date expiryDate) {
-		super();
-		this.expiryDate = expiryDate;
-	}
 	public CurrentInfo() {
 		super();
 		// TODO Auto-generated constructor stub
