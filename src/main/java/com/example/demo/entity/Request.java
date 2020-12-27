@@ -1,11 +1,12 @@
 package com.example.demo.entity;
 
 import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 
@@ -13,13 +14,10 @@ public class Request {
 
 	@Id  
 	//defining id as column name  
-	@Column
-	
-	private int id;  
-	//defining name as column name  
+	 
 	@Column  
 	private String status;  
-	//defining Type as column name 
+	//defining status as column name 
 	@Column  
 	//@JsonFormat(pattern="yyyy-MM-dd")
 	private Date dateFrom;  
@@ -33,12 +31,10 @@ public class Request {
 	@Column  
 	private int durationFrom;  
 	//defining name as column name
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
+	@ManyToOne()
+	@JoinColumn(name="user_id")
+	private Request user_id;
 	public String getStatus() {
 		return status;
 	}
@@ -69,9 +65,8 @@ public class Request {
 	public void setDurationFrom(int durationFrom) {
 		this.durationFrom = durationFrom;
 	}
-	public Request(int id, String status, Date dateFrom, Date dateTo, int durationTo, int durationFrom) {
+	public Request(String status, Date dateFrom, Date dateTo, int durationTo, int durationFrom) {
 		super();
-		this.id = id;
 		this.status = status;
 		this.dateFrom = dateFrom;
 		this.dateTo = dateTo;
