@@ -1,17 +1,15 @@
 package com.example.demo.entity;
 
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Vehicle {
 	@Id  
 	//defining id as column name  
-	@Column  
-	private int id;  
 	
 	//defining name as column name  
 	
@@ -29,14 +27,11 @@ public class Vehicle {
 	private int registerationNo; 
 	//defining Registeration_no as column name
 	
-	@OneToMany
-	private List<User> users;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
+	@ManyToOne()
+	@JoinColumn(name="user_id")
+	private Vehicle user_id;
+	
 	public String getType() {
 		return type;
 	}
@@ -63,12 +58,11 @@ public class Vehicle {
 	}
 	@Override
 	public String toString() {
-		return "Vehicle [id=" + id + ", type=" + type + ", modal=" + modal + ", colour=" + colour + ", registerationNo="
+		return "Vehicle [type=" + type + ", modal=" + modal + ", colour=" + colour + ", registerationNo="
 				+ registerationNo + "]";
 	}
-	public Vehicle(int id, String type, String modal, String colour, int registerationNo) {
+	public Vehicle(String type, String modal, String colour, int registerationNo) {
 		super();
-		this.id = id;
 		this.type = type;
 		this.modal = modal;
 		this.colour = colour;
@@ -76,7 +70,6 @@ public class Vehicle {
 	}
 	public Vehicle() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	
