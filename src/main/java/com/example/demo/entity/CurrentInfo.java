@@ -1,18 +1,9 @@
 package com.example.demo.entity;
 
 import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 
@@ -22,21 +13,6 @@ public class CurrentInfo {
 	//defining id as column name  
 	@Column  
 	private int id;  
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    private User post;
-	
-	
-	
-	
-	//defining name as column name 
-	
-	
-	
-	
-	
 	@Column  
 	private int durationTo;  
 	//defining name as column name
@@ -44,7 +20,7 @@ public class CurrentInfo {
 	private int durationFrom;  
 	//defining name as column name
 	@Column  
-	//@JsonFormat(pattern="yyyy-MM-dd")
+	//@JsonFormat(pattern="YYYY-MM-DD")
 	private Date expiryDate;  
 	//defining name as column name
 	
