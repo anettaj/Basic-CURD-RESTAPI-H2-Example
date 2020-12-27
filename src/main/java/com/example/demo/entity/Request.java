@@ -26,7 +26,7 @@ public class Request {
 	private Date dateTo;  
 	//defining name as column name
 	@Column  
-	private int durationTo;  
+	private int duration_To;  
 	//defining name as column name
 	@Column  
 	private int durationFrom;  
@@ -53,11 +53,11 @@ public class Request {
 	public void setDateTo(Date dateTo) {
 		this.dateTo = dateTo;
 	}
-	public int getDurationTo() {
-		return durationTo;
+	public int getDuration_To() {
+		return duration_To;
 	}
-	public void setDurationTo(int durationTo) {
-		this.durationTo = durationTo;
+	public void setDurationTo(int duration_To) {
+		this.duration_To = duration_To;
 	}
 	public int getDurationFrom() {
 		return durationFrom;
@@ -65,12 +65,12 @@ public class Request {
 	public void setDurationFrom(int durationFrom) {
 		this.durationFrom = durationFrom;
 	}
-	public Request(String status, Date dateFrom, Date dateTo, int durationTo, int durationFrom) {
+	public Request(String status, Date dateFrom, Date dateTo, int duration_To, int durationFrom) {
 		super();
 		this.status = status;
 		this.dateFrom = dateFrom;
 		this.dateTo = dateTo;
-		this.durationTo = durationTo;
+		this.duration_To = duration_To;
 		this.durationFrom = durationFrom;
 	}
 	public Request() {
