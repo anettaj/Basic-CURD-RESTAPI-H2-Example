@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 
@@ -14,12 +15,7 @@ public class CurrentInfo {
 	@Id  
 	//defining id as column name   
 	 
-	@Column  
-	private int duration;  
-	//defining name as column name
-	@Column  
-	private int durationFrom;  
-	//defining name as column name
+	
 	@Column  
 	//@JsonFormat(pattern="YYYY-MM-DD")
 	private Date expiryDate;  
@@ -28,21 +24,17 @@ public class CurrentInfo {
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user_id;
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name="Duration_To")
 	private Request Duration_To;
-	public int getDuration() {
-		return duration;
-	}
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-	public int getDurationFrom() {
-		return durationFrom;
-	}
-	public void setDurationFrom(int durationFrom) {
-		this.durationFrom = durationFrom;
-	}
+	@OneToOne
+	@JoinColumn(name="Duration_From")
+	private Request Duration_From;
+	
+	@OneToOne
+	@JoinColumn(name="Date_To")
+	private Request Date_To;
+	
 	public Date getExpiryDate() {
 		return expiryDate;
 	}
@@ -51,13 +43,10 @@ public class CurrentInfo {
 	}
 	@Override
 	public String toString() {
-		return "CurrentInfo [duration=" + duration + ", durationFrom=" + durationFrom
-				+ ", expiryDate=" + expiryDate + "]";
+		return "CurrentInfo [ expiryDate=" + expiryDate + "]";
 	}
-	public CurrentInfo(int duration, int durationFrom, Date expiryDate) {
+	public CurrentInfo(Date expiryDate) {
 		super();
-		this.duration = duration;
-		this.durationFrom = durationFrom;
 		this.expiryDate = expiryDate;
 	}
 	public CurrentInfo() {
