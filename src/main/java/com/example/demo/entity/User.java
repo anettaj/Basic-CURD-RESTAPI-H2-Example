@@ -14,10 +14,7 @@ public class User {
 	@Column(unique = true)
 	
 	private int id;
-	
 	//defining id as column ID
-
-	//defining name as column name  
 	@Column  
 	private String name;  
 	//defining name as column name  
