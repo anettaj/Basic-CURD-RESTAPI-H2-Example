@@ -14,8 +14,6 @@ public class CurrentInfo {
 
 	@Id  
 	//defining id as column name   
-	 
-	
 	@Column  
 	//@JsonFormat(pattern="YYYY-MM-DD")
 	private Date expiryDate;  
@@ -26,21 +24,17 @@ public class CurrentInfo {
 	private User user_id;
 	@OneToOne
 	@JoinColumn(name="Duration_To")
-	private Request Duration_To;
+	private Pass_Request Duration_To;
 	@OneToOne
 	@JoinColumn(name="Duration_From")
-	private Request Duration_From;
-	
+	private Pass_Request Duration_From;
 	@OneToOne
 	@JoinColumn(name="Expiry_Date")
-	private Request Date_To;
+	private Pass_Request Date_To;
 	
 	public CurrentInfo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	
-	
+
 }
